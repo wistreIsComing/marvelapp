@@ -1,5 +1,7 @@
 # MarvelHeroes
 
+Marvel simple app developed with Angular 9, using Marvel's official API to get data of heroes, comics, creators and series.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
 ## Development server
