@@ -1,0 +1,45 @@
+.marvel-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  background: #232323;
+  // margin-bottom: 40px;
+  a.homeRoute {
+    cursor: pointer;
+    &:visited {
+      text-decoration: none;
+      border: none;
+    }
+  }
+  .nav-items li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 10px;
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgb(255, 255, 255);
+      transition: color .3s ease-in;
+      &:hover {
+        color: rgb(132, 32, 226);
+      }
+    }
+  }
+
+  #search {
+    padding: 10px;
+    border-radius: 10px;
+
+    &:focus {
+      border-style: none;
+    }
+  }
+}
+
+

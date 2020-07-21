@@ -1,0 +1,16 @@
+<div class="container">
+
+  <h1 class="section-heading">Comics</h1>
+  
+  <div class="cards">
+    <div class="card" *ngFor="let comic of comics | async; let i = index;" [routerLink]="['/comic', comic.id]">
+      <img class="card-img-top" 
+      src="{{ comic.thumbnail.path }}.{{comic.thumbnail.extension }}" alt="{{ comic.title }} photo">
+      <div class="card-body">
+        <h1 class="card-title">{{ comic.title }}</h1>
+        <p> <strong>Series:</strong> {{ comic.series.name }}.</p>
+        <p> <strong>Price: </strong>{{ comic.prices[0].price || 'No price available'  }}.</p>
+      </div>
+    </div>
+  </div>
+</div>

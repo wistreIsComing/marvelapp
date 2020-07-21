@@ -1,0 +1,59 @@
+<section id="detail-section" *ngIf="character">
+  <div class="city-banner"></div>
+  
+  <div class="container detail">
+    <div class="profile-section">
+      <img src="{{ character.thumbnail.path }}.{{character.thumbnail.extension }}" 
+      alt="{{ character.name }}" class="profile-picture">
+
+      <h1 class="profile-heading">{{ character.name }}</h1>
+    </div>
+    <div class="description">
+      <h2>Description:</h2>
+      <div class="description-section">
+        <p>{{ character.description || 'No description available' }}</p>
+      </div>
+      <h2>Comics: </h2>
+      <div class="cards">
+        <div class="card" 
+          *ngFor="let comic of comics; let i = index;" [routerLink]="['/comic', comic.id]">
+          
+          <img 
+          src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt="{{ comic.title }}" class="card-img-top">
+          
+          <div class="card-body">
+            <h1 class="card-title">
+              {{ comic.title }}
+            </h1>
+            <p ><strong>Writer: </strong>
+              {{ this.writer[0].name }}
+            </p>
+            <p *ngIf="coverArtist"><strong>Cover artist: </strong>
+              {{ this.coverName }}
+            </p>
+            <p><strong>Price: </strong>
+              {{ comic.prices[0].price || 'No price available' }}
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      <hr>
+      <h2>Series: </h2>
+      <div class="cards">
+        <div class="card" *ngFor="let serie of series">
+          <a class="card">
+            <img 
+            src="{{serie.thumbnail.path}}.{{serie.thumbnail.extension}}" alt="{{serie.title}}" class="card-img-top">
+            <div class="card-body">
+              <h1 class="card-title">{{ serie.title }}</h1>
+              <p><strong>Start year: </strong>{{serie.startYear}}</p>
+              <p><strong>End year: </strong>{{serie.endYear}}</p>
+            </div>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>

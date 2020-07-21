@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "marvelHeroes"
+    }
+  },
+  "defaultProject": "marvelHeroes",
+  "cli": {
+    "analytics": false
+  }
 }

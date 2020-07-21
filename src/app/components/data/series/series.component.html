@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1 class="section-heading">Series</h1>
+  
+  <div class="cards">
+    <div class="card" *ngFor="let serie of series | async" [routerLink]="['/serie', serie.id]">
+      <img class="card-img-top" 
+      src="{{ serie.thumbnail.path }}.{{ serie.thumbnail.extension }}" 
+      alt="{{ serie.title }} photo">
+      <div class="card-body">
+        <h1 class="card-title">{{ serie.title }}</h1>
+        <p> <strong>Start year:</strong> {{ serie.startYear }}.</p>
+        <p> <strong>End year:</strong> {{ serie.endYear }}.</p>
+        <p> <strong>Rating:</strong> {{ serie.rating || 'No rating available' }}.</p>
+      </div>
+    </div>
+  </div>
+</div>

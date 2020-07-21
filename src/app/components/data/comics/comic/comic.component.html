@@ -1,0 +1,59 @@
+<section id="detail-section" *ngIf="comics">
+  <div class="city-banner"></div>
+  
+  <div class="container detail">
+    <div class="profile-section">
+      <img 
+      src="{{ comics[0].thumbnail.path }}.{{ comics[0].thumbnail.extension }}"
+      alt="{{ comics[0].title }}" class="profile-picture">
+
+      <h1 class="profile-heading">{{ comics[0].title }}</h1>
+    </div>
+    <div class="description">
+      <h2>About:</h2>
+      <div class="description-section">
+        <p><strong>Description: </strong>
+          {{ comics[0].title || 'No description available' }}
+        </p>
+        <p *ngIf="writerCheck"><strong>Writer: </strong>
+          {{ this.writer || 'No writer available' }}
+        </p>
+        <p *ngIf="coverArtist"><strong>Cover artist: </strong>
+          {{ this.coverName || 'No writer available' }}
+        </p>
+        <p><strong>Price: </strong>
+          {{ comics[0].prices.price || 'No price available' }}
+        </p>
+        <h3>Characters: </h3>
+        <ul>
+          <li>{{ comics[0].characters.items['name'] || 'No characters available'}}</li>
+        </ul>
+      </div>
+
+      <h2>Comics: </h2>
+      <div class="cards">
+        <div class="card" 
+          *ngFor="let comic of comics" [routerLink]="['/comic', comic.id]">
+          
+          <img 
+          src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" alt="{{comic.title}}" class="card-img-top">
+          
+          <div class="card-body">
+            <h1 class="card-title">
+              {{ comic.title }}
+            </h1>
+            <p *ngIf="comic.creators.items[0]"><strong>Writer: </strong>
+              {{ comic.creators.items[0]['name'] }}
+            </p>
+            <p><strong>Price: </strong>
+              {{ comic.prices.price || 'No price available' }}
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</section>

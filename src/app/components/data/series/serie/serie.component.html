@@ -1,0 +1,21 @@
+<section id="detail-section" *ngIf="serie">
+  <div class="city-banner"></div>
+  
+  <div class="container detail">
+    <div class="profile-section">
+      <img src="{{ serie.thumbnail.path }}.{{serie.thumbnail.extension }}" 
+      alt="{{ serie.title }}" class="profile-picture">
+
+      <h1 class="profile-heading">{{ serie.title }}</h1>
+    </div>
+    <div class="description">
+      <h2>Description:</h2>
+      <div class="description-section">
+        <p>{{ serie.description || 'No description available' }}</p>
+      </div>
+
+      
+    </div>
+  </div>
+  
+</section>

@@ -1,0 +1,16 @@
+<div class="container">
+
+  <h1 class="section-heading">Creators</h1>
+  
+  <div class="cards">
+    <div class="card" *ngFor="let creator of creators | async"
+    [routerLink]="['/creator', creator.id]">
+      <img class="card-img-top" src="{{ creator.thumbnail.path }}.{{creator.thumbnail.extension }}" alt="{{ creator.firstName }} {{ creator.lastName }} photo">
+      <div class="card-body">
+        <h1 class="card-title">{{ creator.fullName }} </h1>
+        <p><strong>Nº of comics:</strong> {{ creator.series.available }}.</p>
+        <p><strong>Nº of series:</strong> {{ creator.series.available }}.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="marvel-navbar">
+  <a routerLinkActive="active" class="homeRoute">
+    <img src="../../../../assets/images/logo.svg" alt="Marvel Logo" height="100" width="100" routerLink="home">
+  </a>
+  <nav>
+    <ul class="nav-items">
+      <li routerLinkActive="active">
+        <a routerLink="characters">Characters</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="comics">Comics</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="series">Series</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="creators">Creators</a>
+      </li>
+    </ul>
+  </nav>
+
+  <input 
+    type="text" 
+    name="search" 
+    id="search" 
+    placeholder="Search..."
+    (keyup.enter)="searchItem(searchText.value)"
+    #searchText>
+</div>
+

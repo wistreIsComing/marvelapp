@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1 class="section-heading">Characters</h1>
+  
+  <div class="cards">
+    <div class="card" 
+      *ngFor="let character of characters | async"
+      [routerLink]="['/character', character.id]">
+      <img class="card-img-top" src="{{ character.thumbnail.path }}.{{character.thumbnail.extension }}" alt="{{ character.name }} photo">
+      <div class="card-body">
+        <h1 class="card-title">{{ character.name }}</h1>
+        <p> <strong>Comic apparitions:</strong> {{ character.comics.available }}.</p>
+        <p> <strong>Series apparitions:</strong> {{ character.series.available }}.</p>
+      </div>
+    </div>
+  </div>
+</div>
