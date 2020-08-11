@@ -1,9 +1,14 @@
 <div class="marvel-navbar">
-  <a routerLinkActive="active" class="homeRoute">
-    <img src="../../../../assets/images/logo.svg" alt="Marvel Logo" height="100" width="100" routerLink="home">
-  </a>
+  <img src="../../../../assets/images/logo.svg" alt="Marvel Logo" height="100" width="100">
+  
   <nav>
+    <div class="navbar-toggler" (click)="showNavbar()">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </div>
     <ul class="nav-items">
+      <li routerLinkActive="active">
+        <a routerLink="home">Home</a>
+      </li>
       <li routerLinkActive="active">
         <a routerLink="characters">Characters</a>
       </li>
@@ -18,13 +23,4 @@
       </li>
     </ul>
   </nav>
-
-  <input 
-    type="text" 
-    name="search" 
-    id="search" 
-    placeholder="Search..."
-    (keyup.enter)="searchItem(searchText.value)"
-    #searchText>
-</div>
 

@@ -14,10 +14,6 @@ export class CharactersComponent implements OnInit {
 
   constructor(private http: HttpClient, private charactersService: CharactersService) {
   }
-  // alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  // letter = '';
-  // changedView = false;
-  // filteredCharacters: ;
 
   ngOnInit(): void {
     this.getCharacters();
@@ -26,18 +22,4 @@ export class CharactersComponent implements OnInit {
   getCharacters() {
     this.characters = this.charactersService.getAllCharacters()
   }
-
-  // filterHeroes(event: any) {
-  //   this.letter = event.target.textContent;
-  //   this.changedView = true;
-  //   return new Promise((resolve, reject) => {
-  //     this.http
-  //     .get(`${environment.apiUrl}characters?nameStartsWith=${this.letter}&apikey=${environment.apiKey}`)
-  //     .subscribe((resp: any) => {
-  //       console.log(resp.data.results);
-  //       this.filteredCharacters = resp.data.results;
-  //       resolve();
-  //     });
-  //   })    
-  // }
 }

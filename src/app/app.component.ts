@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CharactersService } from './services/characters/characters.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,7 @@ import { CharactersService } from './services/characters/characters.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public characters: CharactersService) {
+  constructor() {
 
   }
 }

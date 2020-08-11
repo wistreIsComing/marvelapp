@@ -7,8 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './components/data/home/home.component';
-import { SearchComponent } from './components/layout/search/search.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { HomeComponent } from './components/layout/home/home.component';
 import { CharactersComponent } from './components/data/characters/characters.component';
 import { SeriesComponent } from './components/data/series/series.component';
 import { CreatorsComponent } from './components/data/creators/creators.component';
@@ -29,7 +30,6 @@ import { CreatorComponent } from './components/data/creators/creator/creator.com
     CharactersComponent,
     SeriesComponent,
     CreatorsComponent,
-    SearchComponent,
     ComicsComponent,
     HeaderComponent,
     FooterComponent,
@@ -42,7 +42,8 @@ import { CreatorComponent } from './components/data/creators/creator/creator.com
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

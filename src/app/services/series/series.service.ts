@@ -9,8 +9,6 @@ import { Serie } from 'src/app/interfaces/serie';
   providedIn: 'root'
 })
 export class SeriesService {
-  seriesFilter: Serie[];
-  series: Serie[];
 
   constructor(private http: HttpClient) { }
 
@@ -24,19 +22,5 @@ export class SeriesService {
   getSerie(id: string): Observable<Serie[]> {
     return this.http.get<Serie[]>(`${environment.apiUrl}series/${id}?apikey=${environment.apiKey}`)
     .pipe(map((resp: any) => resp.data.results))
-  }
-
-  filterSeries(term: string) {
-    this.seriesFilter = [];
-    term = term.toLowerCase();
-    this.series.forEach(serie => {
-      const lowerTitle = serie.title.toLowerCase();
-      if (
-        serie.title.indexOf(term) >= 0 ||
-        lowerTitle.indexOf(term) >= 0
-      ) {
-        this.seriesFilter.push(serie);
-      }
-    });
   }
 }

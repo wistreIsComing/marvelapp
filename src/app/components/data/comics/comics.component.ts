@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ComicsService } from 'src/app/services/comics/comics.service';
 import { Comic } from 'src/app/interfaces/comic';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-comics',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -7,17 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  faBars = faBars;
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  searchItem(term: string) {
-    if (term.length < 1) {
-      return;
-    }
-    this.router.navigate(['/search', term]);
+  showNavbar() {
+    const items = document.querySelectorAll('.nav-items');
+    console.log(items);
+
+    items.forEach(item => item.classList.toggle('.navbar-toggle-show'));
   }
 
 }

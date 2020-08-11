@@ -10,9 +10,7 @@ import { Serie } from 'src/app/interfaces/serie';
 @Injectable({
   providedIn: 'root'
 })
-export class CharactersService {
-  characters: Character[];
-  charactersFilter: Character[];
+export class CharactersService {  
   
   constructor(private http: HttpClient) {
   }
@@ -41,19 +39,5 @@ export class CharactersService {
     return this.http
     .get<Serie[]>(`${environment.apiUrl}characters/${id}/series?apikey=${environment.apiKey}`)
     .pipe(map((resp: any) => resp.data.results));
-  }
-
-  filterCharacters(term: string) {
-    this.charactersFilter = [];
-    term = term.toLowerCase();
-    this.characters.forEach(character => {
-      const lowerTitle = character.name.toLowerCase();
-      if (
-        character.name.indexOf(term) >= 0 ||
-        lowerTitle.indexOf(term) >= 0
-      ) {
-        this.charactersFilter.push(character);
-      }
-    });
   }
 }

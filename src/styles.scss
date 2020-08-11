@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');  
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 body {
   padding: 0;
   margin: 0;
@@ -18,19 +17,6 @@ body {
 .container {
   padding-right: 5%;
   padding-left: 5%;
-}
-
-.alphabet {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 5%;
-  li {
-    list-style: none;
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
 }
 
 .cards {

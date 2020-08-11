@@ -10,9 +10,6 @@ import { Character } from 'src/app/interfaces/character';
   providedIn: 'root'
 })
 export class ComicsService {
-  id: string;
-  comicsFilter: Comic[];
-  comics: Comic[];
 
   constructor(private http: HttpClient) {
   }
@@ -34,19 +31,5 @@ export class ComicsService {
     return this.http
     .get<Character[]>(`${environment.apiUrl}comics/${id}/characters?apikey=${environment.apiKey}`)
     .pipe(map((data: any) => data.data.results));
-  }
-
-  filterComics(term: string) {
-    this.comicsFilter = [];
-    term = term.toLowerCase();
-    this.comics.forEach(comic => {
-      const lowerTitle = comic.title.toLowerCase();
-      if (
-        comic.title.indexOf(term) >= 0 ||
-        lowerTitle.indexOf(term) >= 0
-      ) {
-        this.comicsFilter.push(comic);
-      }
-    });
   }
 }

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/data/home/home.component';
-import { SearchComponent } from './components/layout/search/search.component';
+import { HomeComponent } from './components/layout/home/home.component';
 import { CharactersComponent } from './components/data/characters/characters.component';
 import { CreatorsComponent } from './components/data/creators/creators.component';
 import { SeriesComponent } from './components/data/series/series.component';
@@ -16,7 +15,6 @@ import { CreatorComponent } from './components/data/creators/creator/creator.com
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'search/:term', component: SearchComponent },
   { path: 'characters', component: CharactersComponent },
   { path: 'series', component: SeriesComponent },
   { path: 'comics', component: ComicsComponent },

@@ -11,8 +11,6 @@ import { Serie } from 'src/app/interfaces/serie';
   providedIn: 'root'
 })
 export class CreatorsService {
-  creatorsFilter: Creator[];
-  creators: Creator[];
 
   constructor(private http: HttpClient) { }
 
@@ -34,19 +32,5 @@ export class CreatorsService {
   getCreatorSeries(id: string): Observable<Serie[]> {
     return this.http.get<Serie[]>(`${environment.apiUrl}creators/${id}/series?limit=100&apikey=${environment.apiKey}`)
     .pipe(map((resp: any) => resp.data.results));
-  }
-
-  filterCreators(term: string) {
-    this.creatorsFilter = [];
-    term = term.toLowerCase();
-    this.creators.forEach(creator => {
-      const lowerTitle = creator.firstName.toLowerCase();
-      if (
-        creator.firstName.indexOf(term) >= 0 ||
-        lowerTitle.indexOf(term) >= 0
-      ) {
-        this.creatorsFilter.push(creator);
-      }
-    });
   }
 }
